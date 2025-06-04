@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle da Estufa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Painel de Controle da Estufa</h1>
+
+    <div id="leituras-recentes">
+        <h2>Últimas Leituras Significativas</h2>
+        <ul id="lista-leituras">
+            <li>Aguardando dados ao vivo...</li>
+        </ul>
+    </div>
+
+    <div id="controles">
+        <h2>Controles Manuais</h2>
+        <p>
+            Irrigador: <span id="status-Irrigador">OFF</span>
+            <button id="btn-Irrigador-ON" onclick="enviarComando('toggleIrrigador_ON')">Ligar</button>
+            <button id="btn-Irrigador-OFF" onclick="enviarComando('toggleIrrigador_OFF')">Desligar</button>
+        </p>
+        <p>
+            Lâmpada: <span id="status-Lampada">OFF</span>
+            <button id="btn-Lampada-ON" onclick="enviarComando('toggleLampada_ON')">Ligar</button>
+            <button id="btn-Lampada-OFF" onclick="enviarComando('toggleLampada_OFF')">Desligar</button>
+        </p>
+        <p>
+            Aquecedor: <span id="status-Aquecedor">OFF</span>
+            <button id="btn-Aquecedor-ON" onclick="enviarComando('toggleAquecedor_ON')">Ligar</button>
+            <button id="btn-Aquecedor-OFF" onclick="enviarComando('toggleAquecedor_OFF')">Desligar</button>
+        </p>
+        <p>
+            Refrigerador: <span id="status-Refrigerador">OFF</span>
+            <button id="btn-Refrigerador-ON" onclick="enviarComando('toggleRefrigerador_ON')">Ligar</button>
+            <button id="btn-Refrigerador-OFF" onclick="enviarComando('toggleRefrigerador_OFF')">Desligar</button>
+        </p>
+        <hr>
+        <h2>Piloto Automático</h2>
+        <p>Estado: <span id="status-PilotoAutomatico">OFF</span>
+            <button id="btn-PilotoAutomatico-ON" onclick="enviarComandoPiloto(true)">Ligar</button>
+            <button id="btn-PilotoAutomatico-OFF" onclick="enviarComandoPiloto(false)">Desligar</button>
+        </p>
+        <h2>Configurações do Piloto Automático</h2>
+        <p>
+            Limite Temperatura (°C): <input type="number" id="inputLimiteTemp" min="10" max="50" value="20">
+        </p>
+        <p>
+            Limite Luminosidade (Lux): <input type="number" id="inputLimiteLuz" min="100" max="1000" value="600">
+        </p>
+        <button onclick="atualizarLimites()">Atualizar Limites</button>
+
+    </div>
+
+    <div id="relatorio">
+        <h2>Relatório por E-mail</h2>
+        <input type="email" id="email-relatorio" placeholder="Seu e-mail (opcional)">
+        <button onclick="solicitarRelatorio()">Enviar Relatório</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

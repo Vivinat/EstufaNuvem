@@ -1,0 +1,69 @@
+body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+h1, h2 { color: #2c3e50; }
+#leituras-recentes, #controles, #relatorio {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#lista-leituras { list-style-type: none; padding: 0; }
+#lista-leituras li { padding: 8px; border-bottom: 1px solid #eee; }
+#lista-leituras li:last-child { border-bottom: none; }
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover { background-color: #2980b9; }
+input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button.ligado {
+    background-color: #2ecc71; /* Verde */
+    color: white;
+}
+button.ligado:hover {
+    background-color: #27ae60;
+}
+
+button.desligado {
+    background-color: #e74c3c; /* Vermelho para desligado */
+    color: white;
+}
+button.desligado:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo padrão para botões de ligar/desligar pode ser o azul original */
+#controles p button { /* Seleciona apenas botões dentro dos parágrafos de controle */
+    background-color: #3498db; /* Azul padrão */
+}
+#controles p button:hover {
+    background-color: #2980b9;
+}
+
+/* Dando um estilo específico para botões que já estão no estado "ativo" */
+#controles p button.ativo-on { /* Botão de Ligar quando o atuador está ON */
+    background-color: #2ecc71; /* Verde */
+}
+#controles p button.ativo-off { /* Botão de Desligar quando o atuador está OFF */
+    background-color: #bdc3c7; /* Cinza claro, ou outra cor para indicar "já está desligado" */
+    color: #2c3e50;
+    cursor: not-allowed;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
