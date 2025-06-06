@@ -1,6 +1,0 @@
-# projeto_borda/.env
-CLOUD_API_ENDPOINT_LEITURAS="http://127.0.0.1:8080/api/leituras" # Para Snapshots/MongoDB
-CLOUD_API_ENDPOINT_LIVE_UPDATE="http://127.0.0.1:8080/api/live_update" # NOVO
-CLOUD_API_ENDPOINT_COMANDOS="http://127.0.0.1:8080/api/comandos"
-DEVICE_ID="minhaEstufa01"
-ARDUINO_PORT="/dev/ttyACM0"
